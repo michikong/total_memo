@@ -1,0 +1,14 @@
+requireとは
+メソッド
+
+require 'sinatra' 
+
+組み込み変数$LOAD PATHからファイルを探して読み込む
+組み込み変数$LOAD_PATHはパスの配列
+この配列に読み込みたいパスを追加すれば、相対パス指定をしなくても任意のファイルを読み込めるようになる
+
+require './library' 
+絶対パスを引数に渡すと、rubyが実行されているファイルを起点として、ファイルを探して読み込む
+
+# /path/to/my/libraries/以下にあるファイルを$LOAD_PATHに追加
+$LOAD_PATH << '/path/to/my/libraries'
