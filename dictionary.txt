@@ -234,3 +234,15 @@ POSTは以下のようなリクエスト
 
 ※※※HTTPリクエストをする際、
 大事な情報を送信する必要のあるときは POST を使う
+
+-----------------
+mysql2とは
+-----------------
+・Gem
+・Ruby から MySQL に接続するために必要
+・mysqlというソフトウェアとRubyというプログラムの
+　仲介役になるためのライブラリ
+
+# mysql2 のインストール
+sudo yum install mysql-devel -y
+gem install mysql2
