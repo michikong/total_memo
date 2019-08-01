@@ -108,3 +108,12 @@ bundle install --path vendor/bundle
 
 # サービスを起動
 bundle exec ruby app.rb
+
+# 新しいマイグレーションファイルを作成
+bundle exec rake db:create_migration NAME=add_email_to_contacts
+
+# 
+bundle exec rake db:migrate
+
+# 一個戻る
+bundle exec rake db:rollback
