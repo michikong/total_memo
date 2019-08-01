@@ -120,3 +120,29 @@ bundle exec rake -T
 bundle exec rake db:create_migration NAME=create_users
 
 bundle exec rake db:migrate
+
+
+-----------------
+irbでのActiveRecord操作
+-----------------
+
+# ./app.rbの中身を読み込みながら起動
+irb -r ./app.rb
+
+Contactの一覧を確認
+>　Contact.all
+
+追加
+>　Contact.create(name:"irb")
+
+取得
+>　c = Contact.find(12)
+
+削除
+>　c.destroy
+
+一番最新の情報を取得
+>　Contact.last
+
+全て削除
+>　Contact.destroy_all
