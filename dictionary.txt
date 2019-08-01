@@ -1,0 +1,92 @@
+-----------------
+モジュール、メソッド、クラスの違い
+-----------------
+モジュール:    便利なオブジェクトをまとめたファイル
+オブジェクト:  「データ」と「データを扱う関数」の塊
+メソッド:      オブジェクト内で定義されている関数
+
+まとめ
+
+モジュール: 便利なオブジェクトをまとめたファイル(例: datetime)
+   オブジェクト: 便利な関数の塊
+      datetime
+      メソッド: 便利な関数
+         strftime()
+
+
+-----------------
+lesson10のapp.rbの説明
+-----------------
+
+1
+▼require 'sinatra' 
+
+メソッド
+組み込み変数$LOAD PATHからファイルを探して読み込む
+組み込み変数$LOAD_PATHはパスの配列
+この配列に読み込みたいパスを追加すれば、相対パス指定をしなくても任意のファイルを読み込めるようになる
+
+require './library' 
+絶対パスを引数に渡すと、rubyが実行されているファイルを起点として、ファイルを探して読み込む
+
+# /path/to/my/libraries/以下にあるファイルを$LOAD_PATHに追加
+$LOAD_PATH << '/path/to/my/libraries'
+
+4
+▼get
+sinatraが持っているメソッド
+値をURLの後ろにくっつけて送る
+
+   
+5
+▼client = Mysql2::Client.new(host: 'localhost', username: 'root', database: 'chouchou', encoding: 'utf8')
+ここではブラウザを作ってる。
+cliertはオブジェクト変数
+ Msql2はモジュール::で繋いでるから
+Clientはクラスnewしてるし、最初か大文字だから
+名前ありパラメータを渡してる
+
+clientはどうゆうふうに投げるかを定義してる
+
+6
+▼@records = client.query()
+@recordsはオブジェクト変数
+インスタンス変数にするとerbファイルで参照できる
+sinatraの
+queryはメソッド
+クエリーのメソッド対してSQLの文字列の名前なしパラメータとして渡してる
+
+7
+▼erb　:booklist
+sinatraのメソッド
+sinatraとは別のGem
+シンボル記述することによって、
+erbファイルを呼び出す
+
+10
+▼post
+sinatraのメソッド
+
+14
+▼book_title = params['book_title']
+paramsはハッシュの変数
+sinatraで定義されてる
+book_titleはstring型の変数
+
+15
+▼statement = client.prepare('INSERT INTO books (book_title) VALUES(?)')
+clientはオブジェクト変数
+prepareはメソッド
+クエリーのメソッド対してSQLの文字列の名前なしパラメータとして渡してる
+statementはオブジェクト変数
+client.prepareではSQLを投げる為に準備する(SQLを投げますよ~のテンプレートを作っている)
+
+
+16
+▼statement.execute(book_title)
+statementはオブジェクト変数
+executeはstatementが持ってるメソッド
+book_titleはパラメータ
+
+executeで実行する
+テンプレートの？の部分を埋めている
