@@ -5,6 +5,10 @@ Gemを管理する為
 gemを複数使っていると、依存関係が出てきます。
 バージョンが〜だの、あのgemがない〜だの言われるので、面倒です。
 それをbundlerで管理します。Gemfileなるものを使って管理します。
+作成されたGemfileをもとにgemをインストールするコマンドがbundle installです。
+https://qiita.com/io_fleming/items/14626a9cff44bc87e7db
+gemの扱いをbundler経由にする
+
 
 
 source 'https://rubygems.org'
@@ -83,3 +87,24 @@ group :production do　〜〜 end　本番環境で使うgemを指定
 Gemfileを書き終えたら、bundle installでGemfileに記載された通りにインストールする。
 その際、Gemfile.lockを作成する。このファイルがgemのバージョンをロックしてくれている。こいつのおかげで使用するgemのバージョンが変わらない。gemが更新されても、使用するgemのバージョンはそのままにしておいてくれる。
 Gemfile.lockを更新したい時はbundle updateを使う。
+
+
+
+
+
+
+# bundleのインストール
+gem install bundler
+
+# Gemfileの作成
+bundle init
+
+Gimfileとは
+Railsアプリで利用するgemが記述されているファイルのことです。
+
+
+# 取ってきたGimfileをひとまとまりにvendor/bundleに入れる
+bundle install --path vendor/bundle
+
+# サービスを起動
+bundle exec ruby app.rb
