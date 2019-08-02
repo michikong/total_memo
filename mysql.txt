@@ -1,0 +1,59 @@
+# MySQL起動
+sudo service mysqld start
+
+# MySQLの現在の状況を確認
+sudo service mysqld status
+
+# MySQL停止
+sudo service mysqld stop
+
+# MySQLサーバへ接続
+mysql -u root
+
+# データベースの作成
+mysql> CREATE DATABASE データベース名前;
+
+# データベースの確認
+mysql> show databases;
+
+# データベースの削除
+mysql> drop database 削除したいデータベース;
+
+-----------------
+5.4 テーブルの作成
+-----------------
+（例
+create_table_booklist.sqlファイルを作成
+
+booklist/create_table_booklist.sql
+
+   CREATE TABLE booklist.books (
+     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+     book_title VARCHAR(100),
+     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+   );
+
+
+# 作成したファイルを実行
+mysql> source　~/フルパス
+
+# 作業するデータベース(booklist)を指定(USE)
+mysql> USE データベース名;
+
+# テストデータを3レコード挿入
+
+mysql> INSERT INTO booklist.books (book_title) VALUES("非エンジニアのためのプログラミング講座");
+mysql> INSERT INTO booklist.books (book_title) VALUES("プログラミングRuby");
+mysql> INSERT INTO booklist.books (book_title) VALUES("入門HTML5");
+
+# テストデータが挿入されているか確認
+SELECT * FROM booklist.books;
+
+# [例] id カラムの値が 10 のデータを削除する
+DELETE FROM mytbl WHERE id = 10;
+
+# [例]全てのデータを削除する
+DELETE FROM mytbl;
+
+
+DELETE FROM booklist.books WHERE id = 4;
