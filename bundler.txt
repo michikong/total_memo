@@ -113,7 +113,10 @@ bundle exec ruby app.rb
 bundle exec rake db:create_migration NAME=add_email_to_contacts
 
 # 
-bundle exec rake db:migrate
+bundle exec rake db:migrate -c database.yml
 
 # 一個戻る
 bundle exec rake db:rollback
+
+# Rakefileを作ったら、実行
+bundle exec rake -T
