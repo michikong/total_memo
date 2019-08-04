@@ -53,3 +53,9 @@ finish
         Pry.commands.alias_command 'f', 'finish'
         Pry.commands.alias_command 'c', 'continue'
       end
+      
+      
+      
+参照サイト
+
+https://qiita.com/AknYk416/items/6f0bec58712edaf4940e
