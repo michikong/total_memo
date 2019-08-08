@@ -289,3 +289,5 @@ sqlite3のコマンド
 起動
 # sqlite3 contacts.sqlite3
 
+終了
+# .exit
