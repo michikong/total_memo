@@ -291,3 +291,9 @@ sqlite3のコマンド
 
 終了
 # .exit
+
+スキーマの確認
+# .schema
+
+テーブル操作
+# .tables

@@ -99,7 +99,7 @@ gem install bundler
 # Gemfileの作成
 bundle init
 
-Gimfileとは
+※sGimfileとは
 Railsアプリで利用するgemが記述されているファイルのことです。
 
 
@@ -112,13 +112,13 @@ bundle exec ruby app.rb
 # Rakefileを作ったら、実行
 bundle exec rake -T
 
-▼テーブルを作っていく
+▼sテーブルを作っていく
 
 # 新しいマイグレーションファイルを作成
-bundle exec rake db:create_migration NAME=create_info
+bundle exec rake db:create_migration NAME=create_sekikawa
 
-# マイグレーションファイルを参照して、
-(name).sqlite3のファイル(Datebase)とschema.rbgが作成される
+# マイグレーションファイルを参照��て、
+(name).sqlite3のファイル(Datebase)とschema.rbが作成される
 bundle exec rake db:migrate
 
 # 
