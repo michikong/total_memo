@@ -123,3 +123,30 @@ https://qiita.com/ykawakami/items/71b462057a8d714d7382#%E3%83%AA%E3%83%A2%E3%83%
 git reset コミットハッシュ --hard
 ※この場合過去を改ざんしているので、force pushが必要！！
 
+
+
+▼ブランチのあれこれ
+
+# 作成
+git branch [ブランチ名]
+
+# 確認
+git branch
+
+# 削除
+git branch -d [ブランチ名]
+
+# 切り替え
+git checkout [切り替えたいブランチ名]
+
+# ブランチをmasterへマージ
+git merge [作業していたブランチ名]
+
+# ブランチ名の変更
+git branch -m [現在のブランチ名] [新しいブランチ名]
+
+※また、現在の作業中のブランチを変更する場合は
+新しいブランチ名を指定するだけでOK
+git branch -m [新しいブランチ名]
+
+
