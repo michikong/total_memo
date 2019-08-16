@@ -298,6 +298,13 @@ sqlite3のコマンド
 テーブル操作
 # .tables
 
+-----------------
+.gitignoreに記載しても反映されない解決方法
+-----------------
+.gitignore 編集
+キャッシュを削除
+commit & push
 
+https://qiita.com/fuwamaki/items/3ed021163e50beab7154
 
 
