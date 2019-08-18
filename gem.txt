@@ -26,3 +26,12 @@ Gems が必要になることが往々にしてあるのが現実です。
 参照
 Bundler, Gemfile, Gemfile.lockについて
 https://qiita.com/tsubasakat/items/169833d4c8baf79e1b52
+
+
+-----------------------------------
+gemfile
+-----------------------------------
+
+
+gem 'sinatra/reloader'
+app.rbの変更後にいちいちsinatraを再起動する必要がなくな
